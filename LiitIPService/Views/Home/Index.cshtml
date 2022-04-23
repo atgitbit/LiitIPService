@@ -1,4 +1,5 @@
-﻿@{
+﻿@model LiitIPService.ViewModels.HomeIndexViewModel
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -484,11 +485,11 @@
     </div>
 </section>*@<!-- End Portfolio Section -->
 <!-- ======= Team Section ======= -->
-@*<section id="team" class="team section-bg">
+<section id="team" class="team section-bg">
     <div class="container" data-aos="fade-up">
         <div class="section-title">
             <h2>Team</h2>
-            <p>Kolla in vårt Team</p>
+            <p>@Model.EmployeeHeader</p>
         </div>
         <div class="row">
             <div class="col-lg-4 col-md-6">
@@ -538,7 +539,7 @@
             </div>
         </div>
     </div>
-</section>*@<!-- End Team Section -->
+</section><!-- End Team Section -->
 <!-- ======= Contact Section ======= -->
 <section id="contact" class="contact">
     <div class="container" data-aos="fade-up">

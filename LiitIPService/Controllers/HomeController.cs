@@ -1,4 +1,5 @@
 ﻿using LiitIPService.Models;
+using LiitIPService.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,17 +13,26 @@ namespace LiitIPService.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly NorthwindContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, NorthwindContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
         {
-            // var model = new HomeIndexViewModel();
+            var viewModel = new HomeIndexViewModel();
+            viewModel.EmployeeHeader = "Vi som jobbar här";
+            viewModel.Employees = _context.Employees.Select(e => new HomeIndexViewModel.Employee
+            {
+                EmployeeId = e.EmployeeId,
+                EmployeeFirstName = e.FirstName,
+                EmployeeLastName = e.LastName
+            }).ToList();
 
-            return View();
+            return View(viewModel);
         }
 
         public IActionResult Privacy()

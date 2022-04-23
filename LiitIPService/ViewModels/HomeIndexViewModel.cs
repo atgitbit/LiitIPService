@@ -14,6 +14,7 @@ namespace LiitIPService.ViewModels
             public string EmployeeFirstName { get; set; }
             public string EmployeeLastName { get; set; }
         }
+        public string EmployeeHeader { get; set; }
         public List<Employee> Employees { get; set; } = new List<Employee>();
     }
 }
