@@ -48,7 +48,7 @@
                 <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox play-btn mb-4"></a>
             </div>
             <div class="col-lg-6 pt-3 pt-lg-0 content">
-                <h3>Vårt uppdarg för att skydda din intigritet.</h3>
+                <h3>Vårt uppdrag för att skydda din integritet.</h3>
                 <p class="fst-italic">
                     Liit IP service är ny på marknaden men med detta innebär att vi tagit till vara på det senaste skydden du behöver för skydda din data.
                 </p>
@@ -492,51 +492,24 @@
             <p>@Model.EmployeeHeader</p>
         </div>
         <div class="row">
-            <div class="col-lg-4 col-md-6">
-                <div class="member" data-aos="fade-up" data-aos-delay="100">
-                    <div class="pic"><img src="~/img/team/team-1.jpg" class="img-fluid" alt=""></div>
-                    <div class="member-info">
-                        <h4>Walter White</h4>
-                        <span>Chief Executive Officer</span>
-                        <div class="social">
-                            <a href=""><i class="bi bi-twitter"></i></a>
-                            <a href=""><i class="bi bi-facebook"></i></a>
-                            <a href=""><i class="bi bi-instagram"></i></a>
-                            <a href=""><i class="bi bi-linkedin"></i></a>
+            @foreach (var employee in Model.Employees)
+            {
+                <div class="col-lg-4 col-md-6">
+                    <div class="member" data-aos="fade-up" data-aos-delay="100">
+                        <div class="pic"><img src="~/img/team/team-1.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>@employee.EmployeeFirstName @employee.EmployeeLastName</h4>
+                            <span>@employee.EmployeeTitle</span>
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                <div class="member">
-                    <div class="pic"><img src="~/img/team/team-2.jpg" class="img-fluid" alt=""></div>
-                    <div class="member-info">
-                        <h4>Sarah Jhonson</h4>
-                        <span>Product Manager</span>
-                        <div class="social">
-                            <a href=""><i class="bi bi-twitter"></i></a>
-                            <a href=""><i class="bi bi-facebook"></i></a>
-                            <a href=""><i class="bi bi-instagram"></i></a>
-                            <a href=""><i class="bi bi-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                <div class="member">
-                    <div class="pic"><img src="~/img/team/team-3.jpg" class="img-fluid" alt=""></div>
-                    <div class="member-info">
-                        <h4>William Anderson</h4>
-                        <span>CTO</span>
-                        <div class="social">
-                            <a href=""><i class="bi bi-twitter"></i></a>
-                            <a href=""><i class="bi bi-facebook"></i></a>
-                            <a href=""><i class="bi bi-instagram"></i></a>
-                            <a href=""><i class="bi bi-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            }
         </div>
     </div>
 </section><!-- End Team Section -->
